@@ -26,7 +26,7 @@ do
 
 	for k in test_$family/*
 	do
-	    python2.7 yabin.py -s $k > result
+	    python2.7 yabin.py -s $k >> result_$family
 	done
 
     else
