@@ -1,0 +1,3 @@
+[submodule "yabin"]
+	path = yabin
+	url = https://github.com/AlienVault-OTX/yabin
