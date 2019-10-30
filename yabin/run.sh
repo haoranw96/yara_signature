@@ -1,35 +1,66 @@
 #!/bin/bash 
 
-rm global.rule
+# rm global.rule
+
+# iterate through each malware folder
 for f in ../unpacked_binaries/* 
-do 
-    family=$(echo $f | awk -F '/' '{print $3}')
-    num_file=$(($(ls -l $f | wc -l) + 0))
+do
+  # get the name of family and number of files
+  family=$(echo $f | awk -F '/' '{print $3}')
+  num_file=$(($(ls -l $f | wc -l) + 0))
 
-    # ignore malware families which have less than 10 samples
-    if [ "$num_file" -gt 10 ]
-    then 
-	echo $f " has " $num_file " malware samples"
-       	rm -r train_$family && rm -r test_$family
-	mkdir train_$family && mkdir test_$family
+  # ignore malware families which have less than 10 samples
+  if [ "$num_file" -gt 10 ]
+  then
+    echo $f has $num_file malware files
+    # rm -r train_$family && rm -r test_$family
+    mkdir train_$family && mkdir test_$family
 
-	num_train=`echo "$num_file*0.8" |bc | xargs printf "%.0f"`
-	echo $num_train
-	cd $f
-	cp  `ls |sort -R |tail -$num_train`  ../../yabin/train_$family
-	ls ../../yabin/train_$family > ../../yabin/train.txt
-	rsync -avrP --exclude-from='../../yabin/train.txt' ./ ../../yabin/test_$family 
-	cd ../../yabin
-	python2.7 yabin.py -y train_$family >> $family".rule"
-	python2.7 yabin.py -m train_$family
-	cat $family".rule">>global.rule
+    # split folder in to train files (80%) and test files (20%)
+    num_train=`echo "$num_file*0.8" |bc | xargs printf "%.0f"`
+	  echo $num_train train files
+	  echo $((num_file - num_train)) test files
+	  cd $f
+	  # randomly sort the files and copy last 80% to train
+	  cp  `ls |sort -R |tail -$num_train`  ../../yabin/train_$family
+	  ls ../../yabin/train_$family > ../../yabin/train.txt
+	  # copy all the files not in train into test
+	  rsync -ar --exclude-from='../../yabin/train.txt' ./ ../../yabin/test_$family
+	  cd ../../yabin
 
-	for k in test_$family/*
-	do
+	  # generate yara signature
+	  python2.7 yabin.py -y train_$family >> $family".rule"
+	  # put the yara signature into malware database
+	  python2.7 yabin.py -m train_$family
+	  # cat $family".rule">>global.rule
+  else
+	  echo "ignore malware family $family"
+  fi
+done
+
+# print header of confusion matrix
+python3 header.py
+# iterate through each malware family
+for f in ../unpacked_binaries/*
+do
+  # get the name of family and number of files
+  family=$(echo $f | awk -F '/' '{print $3}')
+  num_file=$(($(ls -l $f | wc -l) + 0))
+  # ignore malware families which have less than 10 samples
+  if [ "$num_file" -gt 10 ]
+  then
+    # for each test file, search for samples related to this file
+	  for k in test_$family/*
+	  do
 	    python2.7 yabin.py -s $k >> result_$family
-	done
+	  done
 
-    else
-	echo "ignore malware family $family"
-    fi
+    # produce confusion matrix
+    sed "s/XXXXXXXXX/$family/g" accuracy.py > $family.py
+    python3 $family.py
+    rm $family.py
+    rm result_$family
+    rm -r test_$family
+    rm -r train_$family
+  fi
 done
