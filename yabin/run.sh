@@ -56,7 +56,7 @@ do
 	  done
 
     # produce confusion matrix
-    sed "s/XXXXXXXXX/$family/g" accuracy.py > $family.py
+    sed "s/XXXXXXXXX/$family/g" confusion_matrix.py > $family.py
     python3 $family.py
     rm $family.py
     rm result_$family

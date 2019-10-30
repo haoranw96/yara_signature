@@ -1,12 +1,13 @@
 from os import listdir
 import fnmatch
+import os
 
 count = dict()		# count of malwares classified to different families
 percentage = dict()		# percentage of malwares classified to different families
 num_files = 0		# number of XXXXXXXXX malware files
 
 # list of malware families to be classified as
-families = [f for f in listdir("../unpacked_binaries")]
+families = [f for f in listdir("../unpacked_binaries") if len([name for name in listdir("../unpacked_binaries/"+f)])>10]
 for f in families:
 	count.update({f:0})
 count.update({'no_family':0})
@@ -68,7 +69,7 @@ count[max_family] += 1
 num_files += 1
 
 for k, v in count.items():
-	percentage.update({k: round(v/num_files*1.0, 2)})
+	percentage.update({k: round(v/num_files*1.0, 4)})
 
 # append to csv
 fd = open("confusion_matrix.csv", 'a+')
