@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# rm global.rule
+rm *.rule
 
 # iterate through each malware folder
 for f in ../unpacked_binaries/* 
