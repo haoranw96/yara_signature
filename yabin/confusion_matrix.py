@@ -1,19 +1,23 @@
 from os import listdir
 import fnmatch
-import os
 
 count = dict()		# count of malwares classified to different families
 percentage = dict()		# percentage of malwares classified to different families
 num_files = 0		# number of XXXXXXXXX malware files
 
 # list of malware families to be classified as
-families = [f for f in listdir("../unpacked_binaries") if len([name for name in listdir("../unpacked_binaries/"+f)])>10]
+families = [f for f in listdir("/data/arsa/unpacked_binaries_unipacker") if len([name for name in listdir("/data/arsa/unpacked_binaries_unipacker/"+f)])>=10]
+families = sorted(families, key=str.casefold)
+
 for f in families:
 	count.update({f:0})
 count.update({'no_family':0})
 
 # open file of results of related samples for the malware family
-fd = open("result_XXXXXXXXX", "r")
+try: 
+	fd = open("result_XXXXXXXXX", "r")
+except: 
+	exit(0)
 # votes for family of the test file by signatures
 vote_family = dict()
 
@@ -38,6 +42,7 @@ for l in fd.readlines():
 		# update vote_family with 0 for next the malware file
 		for f in families:
 			vote_family.update({f: 0})
+		vote_family.update({'no_family': 0})
 	elif 'No related samples found' in l:
 		count['no_family'] += 1
 	else:
@@ -49,7 +54,10 @@ for l in fd.readlines():
 					if 'global' not in file:
 						if signature in f.read():
 							family = file[:-5]
-							vote_family[family] += 1
+							try: 
+								vote_family[family] += 1
+							except: 
+								vote_family['no_family'] += 1
 							break
 fd.close()
 
@@ -65,17 +73,36 @@ for k, v in vote_family.items():
 		max_vote = v
 		max_family = k
 
-count[max_family] += 1
+try:
+	count[max_family] += 1
+except:
+	max_family = 'no_family'
 num_files += 1
 
 for k, v in count.items():
 	percentage.update({k: round(v/num_files*1.0, 4)})
 
-# append to csv
-fd = open("confusion_matrix.csv", 'a+')
-line = "XXXXXXXXX"
-for value in percentage.values():
-	line = line + ", " + str(value)
-line = line+ "\n"
+# append to confusion matrix csv
+#fd = open("confusion_matrix.csv", 'a+')
+#line = "actual_XXXXXXXXX"
+#for value in count.values():
+#        line = line + ", " + str(value)
+#line = line+ "\n"
+#fd.write(line)
+#fd.close()
+
+# append to true positive csv
+fd = open("true_pos.csv", 'a+')
+line = "XXXXXXXXX, "
+line = line+ str(percentage["XXXXXXXXX"]*100) + "%, "+ str(num_files) +"\n"
 fd.write(line)
 fd.close()
+
+# append to accuracy csv
+#fd = open("accuracy.csv", 'a+')
+#line = "actual_XXXXXXXXX"
+#for value in percentage.values():
+#        line = line + ", " + str(value)
+#line = line+ "\n"
+#fd.write(line)
+#fd.close()

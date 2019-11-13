@@ -4,7 +4,7 @@ from os import listdir
 families = [f for f in listdir("/data/arsa/unpacked_binaries_unipacker")  if len([name for name in listdir("/data/arsa/unpacked_binaries_unipacker/"+f)])>=10]
 families = sorted(families, key=str.casefold)
 
-fd = open("confusion_matrix.csv", 'w+')
+fd = open("accuracy.csv", 'w+')
 line = " "
 for family in families:
     line = line + ", predicted_"+ family
