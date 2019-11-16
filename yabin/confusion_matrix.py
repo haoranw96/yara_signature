@@ -6,7 +6,7 @@ percentage = dict()		# percentage of malwares classified to different families
 num_files = 0		# number of XXXXXXXXX malware files
 
 # list of malware families to be classified as
-families = [f for f in listdir("/data/arsa/unpacked_binaries_unipacker") if len([name for name in listdir("/data/arsa/unpacked_binaries_unipacker/"+f)])>=10]
+families = [f for f in listdir("/data/arsa/unpacked_binaries") if len([name for name in listdir("/data/arsa/unpacked_binaries/"+f)])>=10]
 families = sorted(families, key=str.casefold)
 
 for f in families:

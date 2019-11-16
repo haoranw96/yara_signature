@@ -1,9 +1,9 @@
 from os import listdir
 
 # list of malware families to be classified as
-families = [f for f in listdir("/data/arsa/unpacked_binaries_unipacker")  if len([name for name in listdir("/data/arsa/unpacked_binaries_unipacker/"+f)])>=10]
-families = sorted(families, key=str.casefold)
+families = [f for f in listdir("/data/arsa/unpacked_binaries")  if len([name for name in listdir("/data/arsa/unpacked_binaries/"+f)])>=10]
 
+families = sorted(families, key=str.casefold)
 fd = open("confusion_matrix.csv", 'w+')
 line = " "
 for family in families:

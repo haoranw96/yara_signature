@@ -2,11 +2,11 @@
 
 # empty whitelist and malware database
 python2.7 yabin.py -d
-# rm global.rule
-rm *.rule
+# rm signatures and results
+rm -r signature && rm -r result
 
 # iterate through each malware folder
-for f in /data/arsa/unpacked_binaries_unipacker/* 
+for f in /data/arsa/unpacked_binaries/* 
 do
   # get the name of family and number of files
   family=$(echo $f | awk -F '/' '{print $5}')
@@ -25,11 +25,11 @@ do
 	  echo $((num_file - num_train)) test files
 	  cd $f
 	  # randomly sort the files and copy last 80% to train
-	  cp  `ls |sort -R |tail -$num_train`  ~/yara_signature/yabin_2/train_$family
-	  ls ~/yara_signature/yabin_2/train_$family >  ~/yara_signature/yabin_2/train.txt
+	  cp  `ls |sort -R |tail -$num_train`  ~/yara_signature/yabin/train_$family
+	  ls ~/yara_signature/yabin/train_$family >  ~/yara_signature/yabin/train.txt
 	  # copy all the files not in train into test
-	  rsync -ar --exclude-from='/home/haoran/yara_signature/yabin_2/train.txt' ./ ~/yara_signature/yabin_2/test_$family
-	  cd ~/yara_signature/yabin_2
+	  rsync -ar --exclude-from='/home/haoran/yara_signature/yabin/train.txt' ./ ~/yara_signature/yabin/test_$family
+	  cd ~/yara_signature/yabin
 
 	  # generate yara signature
 	  python2.7 yabin.py -y train_$family >> $family".rule"
@@ -45,10 +45,10 @@ done
 python3 header.py
 # print header of accuracy matrix
 python3 header_accuracy.py
-# print header of true positive matrix 
+# print header of true positive matrix
 echo "family, true positive percentage, number of testing samples" > true_pos.csv
 # iterate through each malware family
-for f in /data/arsa/unpacked_binaries_unipacker/*
+for f in /data/arsa/unpacked_binaries/*
 do
   # get the name of family and number of files
   family=$(echo $f | awk -F '/' '{print $5}')
@@ -66,8 +66,11 @@ do
     sed "s/XXXXXXXXX/$family/g" confusion_matrix.py > $family.py
     python3 $family.py
     rm $family.py
-    # rm result_$family
-    # rm -r test_$family
-    # rm -r train_$family
+    #rm result_$family
+    #rm -r test_$family
+    #rm -r train_$family
   fi
 done
+
+mkdir result && mv result_* ./result
+mkdir signature && mv *.rule ./signature

@@ -1,0 +1,33 @@
+rule tight__train_brontok_03d446f020ac8db8905034796c937ffa3b1f0e814d8959b1682bcc9942a0e39e {
+ strings:
+  $a_2 = { 558bec83ec1868661d400064a1000000 }
+  $a_3 = { 558bec83ec0868661d400064a1000000 }
+  $a_4 = { 558bec83ec0c68661d400064a1000000 }
+ condition:
+  3 of them
+}
+
+
+
+rule tight__train_brontok_a3d7ca9194647dc2dd05dd2ac7c42c8ddfc15536b7b2b4440acf22b5ce3dcb7c {
+ strings:
+  $a_2 = { 558bec83ec1868661d400064a1000000 }
+  $a_3 = { 558bec83ec0868661d400064a1000000 }
+  $a_4 = { 558bec83ec0c68661d400064a1000000 }
+ condition:
+  3 of them
+}
+
+
+
+rule tight__train_brontok_a3d7ca9194647dc2dd05dd2ac7c42c8ddfc15536b7b2b4440acf22b5ce3dcb7c {
+ strings:
+  $a_2 = { 558bec83ec1868661d400064a1000000 }
+  $a_3 = { 558bec83ec0868661d400064a1000000 }
+  $a_4 = { 558bec83ec0c68661d400064a1000000 }
+ condition:
+  3 of them
+}
+
+
+

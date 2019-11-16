@@ -1,0 +1,88 @@
+rule tight__train_eyestye_28f7cee011b1c52a32f3fc37b8d60739459e3c93e15fa384b9362c04d30dc353 {
+ strings:
+  $a_2 = { 558b0300940800a400fca0f434fc0df5 }
+  $a_3 = { 558b0000940800a400fca0f43bfc0df5 }
+  $a_4 = { 558b0200940800a400fca0f39f00fc0d }
+  $a_5 = { 558b0100940800a400fca0f3a700fc0d }
+ condition:
+  4 of them
+}
+
+
+
+rule tight__train_eyestye_610371bb339734312bac35bfd7a075301dc69f7ccdfbf7e126e2ffeae0dc3fe0 {
+ strings:
+  $a_2 = { 558b0100940800a400fca0f421fc0df5 }
+  $a_3 = { 558b0000940800a400fca0f455fc0df5 }
+ condition:
+  2 of them
+}
+
+
+
+rule tight__train_eyestye_6b1029bab3ef9b163436760c98d9322b2be08f1793b5c9541412e81903b20841 {
+ strings:
+  $a_2 = { 558b0300940800a400fca0f3a600fc0d }
+  $a_3 = { 558b0200940800a400fca0f38800fc0d }
+  $a_4 = { 558b0000940800a400fca0f42efc0df5 }
+  $a_5 = { 558b0100940800a400fca0f3b800fc0d }
+ condition:
+  4 of them
+}
+
+
+
+rule tight__train_eyestye_79d37d656efa2fb72fd01ec42df2b10c99d570cfda00970dc46ba130e9823f7d {
+ strings:
+  $a_2 = { 558b0100940800a400a2f3e622f5568b }
+  $a_3 = { 558b0000940800a400a2f3f222f5568b }
+ condition:
+  2 of them
+}
+
+
+
+rule tight__train_eyestye_28f7cee011b1c52a32f3fc37b8d60739459e3c93e15fa384b9362c04d30dc353 {
+ strings:
+  $a_2 = { 558b0300940800a400fca0f434fc0df5 }
+  $a_3 = { 558b0000940800a400fca0f43bfc0df5 }
+  $a_4 = { 558b0200940800a400fca0f39f00fc0d }
+  $a_5 = { 558b0100940800a400fca0f3a700fc0d }
+ condition:
+  4 of them
+}
+
+
+
+rule tight__train_eyestye_309968f6bb20088e697d0531628a05efb34aa5ae6349f46df0a89f55deed380d {
+ strings:
+  $a_2 = { 558b0300940800a400fca0f3a600fc0d }
+  $a_3 = { 558b0200940800a400fca0f38800fc0d }
+  $a_4 = { 558b0000940800a400fca0f42efc0df5 }
+  $a_5 = { 558b0100940800a400fca0f3b800fc0d }
+ condition:
+  4 of them
+}
+
+
+
+rule tight__train_eyestye_610371bb339734312bac35bfd7a075301dc69f7ccdfbf7e126e2ffeae0dc3fe0 {
+ strings:
+  $a_2 = { 558b0100940800a400fca0f421fc0df5 }
+  $a_3 = { 558b0000940800a400fca0f455fc0df5 }
+ condition:
+  2 of them
+}
+
+
+
+rule tight__train_eyestye_79d37d656efa2fb72fd01ec42df2b10c99d570cfda00970dc46ba130e9823f7d {
+ strings:
+  $a_2 = { 558b0100940800a400a2f3e622f5568b }
+  $a_3 = { 558b0000940800a400a2f3f222f5568b }
+ condition:
+  2 of them
+}
+
+
+
