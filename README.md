@@ -35,7 +35,7 @@ $ ./run.sh
 ```
 
 ## Following files and folders are created: 
-1. siganature/
+1. siganature/  
   This folder contains yara signatures for different families created from training malware samples. 
 
   Each file in this folder containing yara rule:
@@ -54,7 +54,7 @@ $ ./run.sh
 
 Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#hunt-for-code-re-use-amongst-malware) and can be used to identify similar samples of malware. 
 
-2. result/
+2. result/  
   This folder contains matches of hashes from testing files and hashes from training files. 
   
   Each file in the folder are as following: 
@@ -65,14 +65,14 @@ Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin
   
 Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#running-yabin)
 
-3. true_pos.csv
+3. true_pos.csv  
   This file contains accuracy of prediction for different families and the number of testing samples in the family. 
   
   family | true positive percentage | number of testing samples
   --------|-------------------------|------------------------------
   Family A | % of Family A gets predicted as Family A     |    Number of samples in family
 
-4. confusion_matrix.csv
+4. confusion_matrix.csv  
   This file contains the confusion matrix of prediction.  
   
   &nbsp; | Family A                | Family B                    | ...  
@@ -81,7 +81,7 @@ Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin
   Family B | number of Family B gets predicted as Family A | number of Family B gets predicted as Family B | ...  
   ... | &nbsp; | &nbsp; |...
   
- 5. accuracy.csv
+ 5. accuracy.csv  
  This file contains the percentages of a family gets pecited as a family. 
  
   &nbsp; | Family A                | Family B                    | ...  
