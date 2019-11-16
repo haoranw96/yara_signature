@@ -1,1 +1,3 @@
-unpacked_binaries/*
+yabin/test*
+yabin/train*
+
