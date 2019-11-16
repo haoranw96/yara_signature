@@ -52,7 +52,7 @@ $ ./run.sh
 >  any of them  
 >}  
 
-Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#hunt-for-code-re-use-amongst-malware) and can be used to identify similar samples of malware. 
+  Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#hunt-for-code-re-use-amongst-malware) and can be used to identify similar samples of malware. 
 
 2. result/  
   This folder contains matches of hashes from testing files and hashes from training files. 
@@ -63,7 +63,7 @@ Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin
   > 803723719a8b7a8544989103b49af1a2 matched via 558b0300940800a400fca0f3a600fc0d  
   > 1b0ed7d4d1fe05784d36f15798d0e3fb matched via 558b0300940800a400fca0f3a600fc0d  
   
-Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#running-yabin)
+  Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#running-yabin)
 
 3. true_pos.csv  
   This file contains accuracy of prediction for different families and the number of testing samples in the family. 
@@ -82,7 +82,7 @@ Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin
   ... | &nbsp; | &nbsp; |...
   
  5. accuracy.csv  
- This file contains the percentages of a family gets pecited as a family. 
+  This file contains the percentages of a family gets pecited as a family. 
  
   &nbsp; | Family A                | Family B                    | ...  
   -------|-------------------------|-----------------------------|--------------------  
