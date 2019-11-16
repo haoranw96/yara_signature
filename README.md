@@ -9,7 +9,7 @@ This project uses Yabin from https://github.com/AlienVault-OTX/yabin to create s
 $ git clone https://github.com/haoranw96/yara_signature.git
 ```
 
-## Install dependencies
+## Install dependency
 
 ```
 $ pip3 install pefile
