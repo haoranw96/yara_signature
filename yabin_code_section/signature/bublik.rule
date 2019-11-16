@@ -1,0 +1,13 @@
+rule tight__train_bublik_8901feb1ffe2a911a7b4081b9ce452ee67841951d16e5cf4fdac7493e6bec48d {
+ strings:
+  $a_2 = { 558becff152030400a344414008bcd8 }
+  $a_3 = { 558b1d241400bffff00eb3000be0 }
+  $a_4 = { 558bec83ec108b4582500ffffb94d5a }
+  $a_5 = { 558bec83c4f08d1564404008d1d6c40 }
+  $a_6 = { 558bec83ec468b45c83f81f8577100 }
+ condition:
+  5 of them
+}
+
+
+

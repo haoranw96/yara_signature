@@ -1,0 +1,44 @@
+rule tight__train_eyestye_616ef3963ec903160f5f965599eb2bd0174ea858cdf4f90bacaa39c5e1a9701b {
+ strings:
+  $a_2 = { 558b009480a40fca0f43bfcdf5568b }
+  $a_3 = { 558b209480a40fca0f39f0fcdf556 }
+  $a_4 = { 558b109480a40fca0f3a70fcdf556 }
+  $a_5 = { 558b309480a40fca0f434fcdf5568b }
+ condition:
+  4 of them
+}
+
+
+
+rule tight__train_eyestye_309968f6bb20088e697d0531628a05efb34aa5ae6349f46df0a89f55deed380d {
+ strings:
+  $a_2 = { 558b009480a40fca0f42efcdf5568b }
+  $a_3 = { 558b309480a40fca0f3a60fcdf556 }
+  $a_4 = { 558b109480a40fca0f3b80fcdf556 }
+  $a_5 = { 558b209480a40fca0f3880fcdf556 }
+ condition:
+  4 of them
+}
+
+
+
+rule tight__train_eyestye_610371bb339734312bac35bfd7a075301dc69f7ccdfbf7e126e2ffeae0dc3fe0 {
+ strings:
+  $a_2 = { 558b109480a40fca0f421fcdf5568b }
+  $a_3 = { 558b009480a40fca0f455fcdf5568b }
+ condition:
+  2 of them
+}
+
+
+
+rule tight__train_eyestye_79d37d656efa2fb72fd01ec42df2b10c99d570cfda00970dc46ba130e9823f7d {
+ strings:
+  $a_2 = { 558b009480a40a2f3f222f5568b00 }
+  $a_3 = { 558b109480a40a2f3e622f5568b10 }
+ condition:
+  2 of them
+}
+
+
+

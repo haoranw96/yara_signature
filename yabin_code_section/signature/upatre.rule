@@ -1,0 +1,81 @@
+rule tight__train_upatre_6751e872fdd06a5d9b86c1f785b9b012e80b4caa978ca65690864b42131887ee {
+ strings:
+  $a_2 = { 558becff152030400a344414008bcd8 }
+  $a_3 = { 558b1d241400bffff00eb3000be0 }
+  $a_4 = { 558bec83ec108b4582500ffffb94d5a }
+  $a_5 = { 558bec83c4f08d1564404008d1d6c40 }
+  $a_6 = { 558bec83ec468b45c83f81f8577100 }
+ condition:
+  5 of them
+}
+
+
+
+rule tight__train_upatre_12e66fc2b595fce0a8467e7addd8d5a8c72305e8927761a6b04d379eaa3eb000 {
+ strings:
+  $a_2 = { 558bec83ec105333db538d4df0e86cff }
+  $a_3 = { 558bec83ec20a178e040033c58945fc }
+  $a_4 = { 558bec81eca0300e8726e00684100 }
+  $a_5 = { 558bec83ec8897dfc8975f88b75c8b7 }
+  $a_6 = { 558bec83ec14a154ee4008b4d86bc01 }
+  $a_7 = { 558bec5151535657684100be50e640 }
+  $a_8 = { 558bec83ec1c897df48975f8895dfc8b }
+  $a_9 = { 558bec535657556a06a0687475400ff }
+  $a_10 = { 558bec83ec1853ff75108d4de8e832d7 }
+  $a_11 = { 558b6818ff70cff7010ff7014e83eff }
+  $a_12 = { 558bec5356576a06a068635f40051e8 }
+  $a_13 = { 558bec51518b4d88b41853568b71105 }
+  $a_14 = { 558bec57568b75c8b4d108b7d88bc18 }
+  $a_15 = { 558bec83ec14a178e040033c58945fc }
+  $a_16 = { 558bec5633c050505050505050508b55 }
+  $a_17 = { 558bec83ec20535657e81defffff33db }
+  $a_18 = { 558bec83ec4897dfc8b7d88b4dcc1e9 }
+  $a_19 = { 558b6c2485251ff742414e8b4feffff }
+  $a_20 = { 558bec8b458ff34c518d7400ff15a89 }
+  $a_21 = { 558becff35c8e9400e841f5ffff85c0 }
+  $a_22 = { 558b68108b5028528b502452e814000 }
+  $a_23 = { 558bec83ec108b4d88b4110568b75c5 }
+  $a_24 = { 558bec83ec34a178e040033c58945fc }
+  $a_25 = { 558bec83ec10ff7588d4df0e8adefff }
+  $a_26 = { 558bec5151568d45fc33f6508975fc89 }
+  $a_27 = { 558bec83ec145657ff7588d4dece81f }
+  $a_28 = { 558bec81ec28300a370eb40089d6ce }
+  $a_29 = { 558bec83ec1833c0538945fc8945f489 }
+  $a_30 = { 558b6c24883fde0f879f000538b1d1 }
+  $a_31 = { 558bec83ec10a178e04008365f80836 }
+  $a_32 = { 558bec53568b75833db395d14577510 }
+  $a_33 = { 558bec83ecca178e040033c58945fc6 }
+  $a_34 = { 558bec8b458568d34c518d7400833e0 }
+  $a_35 = { 558b4c2488b29ff711cff7118ff7128 }
+  $a_36 = { 558bec83ec10ff7588d4df0e82ce2ff }
+  $a_37 = { 558bec5756538b4d10bc9744d8b7588 }
+  $a_38 = { 558bec83ec10ff75c8d4df0e893d5ff }
+  $a_39 = { 558bec5151a178e040033c58945fca1 }
+  $a_40 = { 558bec33c039514ea40050ff7510ff7 }
+  $a_41 = { 558bec83ecc8b4d88b411053568b751 }
+  $a_42 = { 558bec83ec10897dfc8b458998bf833 }
+  $a_43 = { 558bec515633d239558578b7dc89138 }
+ condition:
+  34 of them
+}
+
+
+
+rule tight__train_upatre_3e53c94282c12aa7503177210d0664ff73a731d58277803bc1bb140626dc3fe0 {
+ strings:
+  $a_2 = { 558becb83c2000e8433005633f656f }
+ condition:
+  2 of them
+}
+
+
+
+rule tight__train_upatre_03e702239a02ae6e7e483cb66db2b05ff69d94b58b0b8e0518a2f15a35da9552 {
+ strings:
+  $a_2 = { 558becb83c2000e89330053565733f }
+ condition:
+  2 of them
+}
+
+
+

@@ -1,0 +1,9 @@
+rule tight__train_ruskill_86376f72c135fb47f8d2a463d99d95be0ac70b95c185bb25013cec91a8546c69 {
+ strings:
+  $a_2 = { 558b009480540a3f515a00f5568b0 }
+ condition:
+  2 of them
+}
+
+
+
