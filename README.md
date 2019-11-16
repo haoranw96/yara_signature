@@ -54,6 +54,7 @@ $ ./run.sh
 
   Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#hunt-for-code-re-use-amongst-malware) and can be used to identify similar samples of malware. 
 
+
 2. result/  
   This folder contains matches of hashes from testing files and hashes from training files. 
   
@@ -65,12 +66,14 @@ $ ./run.sh
   
   Which are generated with hunt mechanism (https://github.com/AlienVault-OTX/yabin#running-yabin)
 
+
 3. true_pos.csv  
   This file contains accuracy of prediction for different families and the number of testing samples in the family. 
   
   family | true positive percentage | number of testing samples
   --------|-------------------------|------------------------------
   Family A | % of Family A gets predicted as Family A     |    Number of samples in family
+
 
 4. confusion_matrix.csv  
   This file contains the confusion matrix of prediction.  
@@ -81,6 +84,7 @@ $ ./run.sh
   Family B | number of Family B gets predicted as Family A | number of Family B gets predicted as Family B | ...  
   ... | &nbsp; | &nbsp; |...
   
+  
  5. accuracy.csv  
   This file contains the percentages of a family gets pecited as a family. 
  
@@ -89,3 +93,4 @@ $ ./run.sh
   Family A | percentage of Family A gets predicted as Family A | percentage of Family A gets predicted as Family B | ...  
   Family B | percentage of Family B gets predicted as Family A | percentage of Family B gets predicted as Family B | ...  
   ... | &nbsp; | &nbsp; |...
+
